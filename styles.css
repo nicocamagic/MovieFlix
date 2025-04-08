@@ -1,0 +1,257 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/* Contenedor de login y registro */
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #e50914;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #f40612;
+}
+
+/* Formulario de registro y login */
+#register-form input, #login-form input {
+    width: 80%;
+    margin: 10px 0;
+}
+
+/* Links */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header #menu-toggle{
+    background: #f40612;
+    width: auto;
+    padding: 1%;
+    position: fixed;
+}
+header {
+    padding: 20px;
+    background-color: #090909;
+    text-align: center;
+    position: relative;
+}
+
+/* Buscador */
+input#search {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    background-color: #131413;
+    border: 1px solid #ea0909;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #141414;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 15px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #e50914;
+}
+
+/* Estilos de las películas */
+#movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.movie img:hover {
+    transform: scale(1.05);
+}
+
+.movie h3 {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #141414;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #e50914;
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 7, 7, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+/* Botón menú hamburguesa */
+#menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Modo móvil */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #131212;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    /* Evitar que el footer fije su posición en móviles */
+    footer {
+        position: relative;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Define el tipo de documento como HTML5 -->
+
+<html lang="es">
+<!-- Comienza el documento HTML y especifica que el idioma es español -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8, que incluye la mayoría de caracteres de todos los idiomas -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Hace que el diseño sea responsivo, adaptándose al ancho de la pantalla del dispositivo -->
+
+    <title>MovieApp</title>
+    <!-- Título de la pestaña del navegador -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlaza el archivo de estilos CSS externo -->
+</head>
+
+<body>
+    <!-- Comienza el cuerpo del documento -->
+
+    <header>
+        <!-- Encabezado principal de la página -->
+
+        <input type="text" id="search" placeholder="Buscar película...">
+        <!-- Campo de entrada para buscar películas, con un texto guía -->
+
+        <button id="menu-toggle">&#9776;</button>
+        <!-- Botón para alternar el menú de navegación, con el icono ☰ -->
+
+        <nav id="menu">
+            <!-- Menú de navegación principal -->
+
+            <ul>
+                <!-- Lista de opciones del menú -->
+                <li><button id="menu-inicio">Inicio</button></li>
+                <!-- Botón para ir a la sección de inicio -->
+                <li><button id="menu-buscar">Buscar</button></li>
+                <!-- Botón para ir a la sección de búsqueda -->
+                <li><button id="menu-favoritos">Favoritos</button></li>
+                <!-- Botón para ver las películas favoritas -->
+                <li><button id="menu-perfil">Perfil</button></li>
+                <!-- Botón para ir al perfil del usuario -->
+                <li><button><a href="index.html">Cerrar Sesion</a></button></li>
+                <!-- Botón que redirige a la página de inicio para cerrar sesión -->
+            </ul>
+        </nav>
+    </header>
+
+    <nav>
+        <!-- Segundo menú de navegación (categorías de películas) -->
+
+        <ul>
+            <!-- Lista de categorías -->
+            <li><a href="#" class="tab" data-category="popular">Populares</a></li>
+            <!-- Categoría de películas populares -->
+            <li><a href="#" class="tab" data-category="trending">Tendencias</a></li>
+            <!-- Categoría de películas en tendencia -->
+            <li><a href="#" class="tab" data-category="top_rated">Mejor Valoradas</a></li>
+            <!-- Categoría de películas mejor valoradas -->
+            <li><a href="#" class="tab" data-category="action">Acción</a></li>
+            <!-- Categoría de películas de acción -->
+            <li><a href="#" class="tab" data-category="comedy">Comedia</a></li>
+            <!-- Categoría de películas de comedia -->
+            <li><a href="#" class="tab" data-category="horror">Terror</a></li>
+            <!-- Categoría de películas de terror -->
+        </ul>
+    </nav>
+
+    <main id="movies-container"></main>
+    <!-- Contenedor principal donde se mostrarán las películas -->
+
+    <div id="trailer-modal" class="modal">
+        <!-- Modal para mostrar el tráiler de una película -->
+
+        <div class="modal-content">
+            <!-- Contenido del modal -->
+
+            <span class="close" onclick="closeTrailer()">&times;</span>
+            <!-- Botón para cerrar el modal (×) que llama a la función closeTrailer() -->
+
+            <iframe id="trailer-video" width="250" height="250" frameborder="0" allowfullscreen></iframe>
+            <!-- Iframe donde se carga el video del tráiler de YouTube -->
+        </div>
+    </div>
+
+    <footer></footer>
+    <!-- Pie de página vacío por ahora -->
+
+    <script src="main.js"></script>
+    <!-- Enlace al archivo JavaScript externo donde se manejará la lógica de la app -->
+
+    <script>
+        // Script para mostrar u ocultar el menú al hacer clic en el botón ☰
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.querySelector("nav ul").classList.toggle("show");
+        });
+    </script>
+</body>
+</html>

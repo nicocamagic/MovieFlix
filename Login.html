@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - MovieFlix</title>
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Bienvenido a MovieFlix</h1>
+    <section id="auth">
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <select id="role">
+        <option value="usuario">Usuario</option>
+        <option value="admin">Administrador</option>
+      </select>
+      <button onclick="registrar()">Registrarse</button>
+      <button onclick="iniciarSesion()">Iniciar Sesión</button>
+    </section>
+  </main>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
